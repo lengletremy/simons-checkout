@@ -1,0 +1,932 @@
+/******************************************************
+ * SIMON'S WATCHES — PANIER (cart)
+ * Fidèle à TUNNEL DE VENTE (6).pdf
+ ******************************************************/
+
+/* Base container du tunnel */
+.sw-cart-page {
+    padding-top: 20px;
+}
+
+.sw-breadcrumb {
+    font-size: 13px;
+    color: #8A8A8A;
+    margin-bottom: 25px;
+}
+
+.sw-page-title {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    letter-spacing: 0.03em;
+}
+
+/******************************************************
+ * GRID PRINCIPALE
+ ******************************************************/
+.sw-grid-2 {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 50px;
+}
+@media (max-width: 1000px) {
+    .sw-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/******************************************************
+ * BANNER INFORMATION LIVRAISON (alerte)
+ ******************************************************/
+.sw-cart-info-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid #e5e5e5;
+    background: #fafafa;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 35px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #777;
+}
+
+/* Icône camion à gauche */
+.sw-cart-info-icon {
+    flex: 0 0 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.sw-cart-info-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Texte au centre */
+.sw-cart-info-text {
+    flex: 1;
+}
+.sw-cart-info-title {
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 4px;
+}
+.sw-cart-info-text p {
+    margin: 0 0 3px;
+}
+.sw-cart-info-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Bouton de fermeture à droite */
+.sw-cart-info-close {
+    flex: 0 0 auto;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    line-height: 1;
+    color: #aaa;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 12px;
+}
+.sw-cart-info-close:hover {
+    color: #000;
+}
+
+
+/******************************************************
+ * CARD PRODUIT
+ ******************************************************/
+.sw-cart-product-card {
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    padding: 25px 28px;
+    margin-bottom: 25px;
+}
+
+/* Ligne produit : image + infos avec bordure verticale */
+.sw-cart-item {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    padding: 28px 0;
+    border-bottom: 1px solid #eee;
+}
+.sw-cart-item:last-child {
+    border-bottom: none;
+}
+
+/*** Colonne image ***/
+.sw-cart-image {
+    flex: 0 0 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sw-cart-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*** Colonne texte avec bordure verticale ***/
+.sw-cart-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #E5E5E5;
+    padding-left: 30px;
+}
+
+/* Ligne du haut : titre + croix */
+.sw-cart-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+/*** Titre produit ***/
+.sw-cart-title a {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.sw-cart-title a:hover {
+    color: #a00;
+}
+
+/*** Croix suppression ***/
+.sw-cart-remove {
+    font-size: 26px;
+    color: #b5b5b5;
+    text-decoration: none;
+    font-weight: 300;
+}
+.sw-cart-remove:hover {
+    color: #000;
+}
+
+/*** META PRODUIT ***/
+.sw-cart-meta {
+    line-height: 1.4;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 18px;
+}
+
+/*** Prix produit ***/
+.sw-cart-price {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+/*** Lien ajuster le bracelet ***/
+.sw-adjust-link a {
+    color: #000;
+    text-decoration: underline;
+    font-size: 14px;
+}
+.sw-adjust-link a:hover {
+    opacity: .6;
+}
+
+/******************************************************
+ * RÉSUMÉ DE COMMANDE — MAQUETTE EXACTE
+ ******************************************************/
+.sw-order-summary {
+    border: 1px solid #E5E5E5;
+    padding: 35px 28px 30px;
+    background: #ffffff;
+}
+
+/* Lignes Sous-total / Expédition / Taxes */
+.sw-summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 14px;
+}
+
+/* Espace avant total */
+.sw-summary-lines {
+    margin-bottom: 22px;
+}
+
+/* Zone TOTAL */
+.sw-summary-total-line {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 14px;
+    margin-top: 8px;
+    border-top: 1px solid #E5E5E5;
+}
+
+.sw-total-label {
+    font-size: 16px;
+    font-weight: 600;
+}
+.sw-total-value {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/******************************************************
+ * BOUTON ROUGE (Procéder à l'achat)
+ ******************************************************/
+.sw-btn-checkout {
+    width: 100%;
+    display: block;
+    background: #C50325;
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+    margin: 24px 0 26px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    text-decoration: none;
+}
+.sw-btn-checkout:hover {
+    background: #A3021F;
+}
+
+/******************************************************
+ * LOGOS – EXACTEMENT COMME MAQUETTE
+ ******************************************************/
+.sw-payments-wrapper {
+    margin-bottom: 34px;
+}
+
+.sw-payments-line {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 12px;
+}
+
+.sw-payments-line img {
+    height: 32px;
+}
+
+/******************************************************
+ * AVANTAGES — SANS BORDURES (maquette)
+ ******************************************************/
+.sw-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+}
+
+.sw-benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.sw-benefits-list li img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+.sw-benefits-list li span {
+    font-size: 14px;
+    color: #222;
+    line-height: 1.3;
+}
+
+/******************************************************
+ * BESOIN D'AIDE — BARRE DU BAS
+ ******************************************************/
+.sw-help-box {
+    margin-top: 18px;
+    padding: 16px 10px;
+    background: #F7F7F7;
+    border: 1px solid #E5E5E5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sw-help-box img {
+    width: 18px;
+    opacity: 0.85;
+}
+
+.sw-help-box span {
+    font-size: 14px;
+    color: #333;
+}
+
+.sw-help-box a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/******************************************************
+ * SECTION RECOMMANDATIONS
+ ******************************************************/
+.sw-reco-title {
+    font-size: 22px;
+    font-style: italic;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Petit trait rouge */
+.sw-reco-line {
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: #C50325;
+    margin-left: 12px;
+}
+
+.sw-reco-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+@media (max-width: 768px) {
+    .sw-reco-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.sw-reco-grid img {
+    width: 100%;
+    height: auto;
+}
+.sw-reco-grid h3 {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    margin-top: 12px;
+}
+.sw-reco-grid .price {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+
+
+/******************************************************
+ * CHECKOUT — mise en page générale
+ ******************************************************/
+.sw-checkout-page {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Colonne gauche spécifique checkout */
+.sw-checkout-left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/******************************************************
+ * Bloc “Commande sans inscription / connecté”
+ ******************************************************/
+.sw-checkout-login-box {
+    border: 1px solid #E5E5E5;
+    background: #FAFAFA;
+    padding: 16px 18px;
+    font-size: 14px;
+    color: #555;
+}
+.sw-checkout-login-box h2 {
+    font-size: 16px;
+    margin: 0 0 6px;
+}
+.sw-checkout-login-box p {
+    margin: 0;
+}
+.sw-checkout-login-box a {
+    color: #000;
+    text-decoration: underline;
+}
+.sw-checkout-login-box a:hover {
+    opacity: .7;
+}
+
+/******************************************************
+ * Sections ouvrables (accordéons)
+ ******************************************************/
+.sw-checkout-section {
+    border: 1px solid #E5E5E5;
+    background: #FFFFFF;
+}
+
+.sw-checkout-section + .sw-checkout-section {
+    margin-top: 8px;
+}
+
+/* Header cliquable */
+.sw-checkout-section-header {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: #F7F7F7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+}
+
+.sw-checkout-section-title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Petit chevron */
+.sw-checkout-section-toggle {
+    position: relative;
+    width: 12px;
+    height: 12px;
+}
+.sw-checkout-section-toggle::before,
+.sw-checkout-section-toggle::after {
+    content: '';
+    position: absolute;
+    inset: 50%;
+    width: 9px;
+    height: 1px;
+    background: #777;
+    transform-origin: center;
+}
+.sw-checkout-section-toggle::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.sw-checkout-section-toggle::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* État ouvert : chevron vers le haut */
+.sw-checkout-section--open .sw-checkout-section-toggle::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.sw-checkout-section--open .sw-checkout-section-toggle::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Corps de section */
+.sw-checkout-section-body {
+    padding: 16px 18px 18px;
+    display: none;
+}
+.sw-checkout-section--open .sw-checkout-section-body {
+    display: block;
+}
+
+/* Indication texte (transporteur / paiement) */
+.sw-checkout-hint {
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 5px;
+}
+
+/******************************************************
+ * Champs WooCommerce — style Figma
+ ******************************************************/
+.sw-checkout-form .form-row {
+    margin-bottom: 12px;
+}
+
+.sw-checkout-form .form-row label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.sw-checkout-form .input-text,
+.sw-checkout-form select,
+.sw-checkout-form textarea {
+    width: 100%;
+    border: 1px solid #E5E5E5;
+    border-radius: 0;
+    padding: 10px 12px;
+    font-size: 14px;
+    background: #FFFFFF;
+    box-shadow: none;
+}
+
+.sw-checkout-form .input-text:focus,
+.sw-checkout-form select:focus,
+.sw-checkout-form textarea:focus {
+    outline: none;
+    border-color: #C50325;
+}
+
+/******************************************************
+ * Colonne droite checkout — on réutilise sw-order-summary
+ ******************************************************/
+.sw-checkout-right .sw-order-summary {
+    margin-bottom: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .sw-grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .sw-checkout-right {
+        margin-top: 30px;
+    }
+}
+
+/******************************************************
+ * CHECKOUT — Mise en page générale (TUNNEL 12)
+ ******************************************************/
+.sw-checkout-page {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.sw-checkout-left {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/******************************************************
+ * Blocs principaux (login, adresse, mode livraison)
+ ******************************************************/
+.sw-co-block {
+    border: 1px solid #E5E5E5;
+    background: #FFFFFF;
+}
+.sw-co-block-inner {
+    padding: 26px 30px;
+}
+.sw-co-block-inner--light {
+    background: #F7F7F7;
+}
+
+.sw-co-block-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.sw-co-required {
+    font-size: 12px;
+    color: #777;
+    margin: 0 0 18px;
+}
+
+/******************************************************
+ * Onglets "Commander sans inscription" / "Se connecter"
+ ******************************************************/
+.sw-co-login-tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.sw-co-login-tab {
+    flex: 1;
+    border: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 12px 16px;
+    background: #F7F7F7;
+    cursor: pointer;
+}
+.sw-co-login-tab--active {
+    background: #FFFFFF;
+    box-shadow: 0 -1px 0 #FFFFFF inset;
+}
+
+.sw-co-login-panels {
+    background: #F7F7F7;
+    padding: 24px 26px;
+}
+
+.sw-co-login-panel {
+    display: none;
+    font-size: 14px;
+    color: #555;
+}
+.sw-co-login-panel--active {
+    display: block;
+}
+
+.sw-field label {
+    display: block;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 4px;
+}
+.sw-field .input-text {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #333;
+    border-radius: 0;
+    padding: 8px 2px 6px;
+    font-size: 14px;
+    background: transparent;
+}
+.sw-field .input-text:focus {
+    outline: none;
+    border-bottom-color: #C50325;
+}
+
+.sw-btn-validate-email {
+    margin-top: 18px;
+    display: block;
+    width: 180px;
+    padding: 12px 0;
+    background: #C50325;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+.sw-btn-validate-email:hover {
+    background: #A3021F;
+}
+
+.sw-co-login-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #777;
+}
+
+/* Utilisateur connecté */
+.sw-co-connected {
+    font-size: 14px;
+    color: #555;
+}
+.sw-co-connected a {
+    color: #000;
+    text-decoration: underline;
+}
+
+/******************************************************
+ * Adresse de livraison — grille de champs
+ ******************************************************/
+.sw-co-block--address .sw-co-block-inner {
+    background: #F7F7F7;
+}
+
+.sw-co-fields-grid .form-row {
+    margin-bottom: 12px;
+}
+
+.sw-checkout-form .form-row label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.sw-checkout-form .input-text,
+.sw-checkout-form select,
+.sw-checkout-form textarea {
+    width: 100%;
+    border: 1px solid #E5E5E5;
+    border-radius: 0;
+    padding: 10px 12px;
+    font-size: 14px;
+    background: #FFFFFF;
+    box-shadow: none;
+}
+
+.sw-checkout-form .input-text:focus,
+.sw-checkout-form select:focus,
+.sw-checkout-form textarea:focus {
+    outline: none;
+    border-color: #C50325;
+}
+
+.sw-co-checkbox {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #555;
+}
+.sw-co-checkbox input {
+    margin-right: 6px;
+}
+
+/******************************************************
+ * Mode de livraison (bloc vide, style Figma)
+ ******************************************************/
+.sw-co-block--shipping .sw-co-block-inner {
+    background: #F7F7F7;
+}
+
+/******************************************************
+ * Colonne droite — checkout
+ ******************************************************/
+.sw-order-summary--checkout .sw-summary-heading {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    margin: 0 0 22px;
+}
+
+/* Carte produit dans le résumé */
+.sw-checkout-product-card {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
+    background: #F7F7F7;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+}
+
+.sw-checkout-product-image img {
+    width: 100%;
+    height: auto;
+}
+
+.sw-checkout-product-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.sw-checkout-product-meta {
+    font-size: 13px;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .sw-checkout-right {
+        margin-top: 30px;
+    }
+}
+
+/***********************************************
+ * ÉTAPE 1 — IDENTIFICATION (Figma exact)
+ ***********************************************/
+.sw-step1-box {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Grande carte grise */
+.sw-step1-card {
+    background: #F4F4F4;
+    padding: 40px 0;
+    position: relative;
+}
+
+/* Cartouche blanc du titre */
+.sw-step1-title-wrapper {
+    background: #FFFFFF;
+    padding: 20px 40px;
+    display: inline-block;
+    margin-left: 40px;
+    transform: translateY(-40px);
+}
+
+/* Titre */
+.sw-step1-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+    color: #000;
+}
+
+/* Contenu */
+.sw-step1-content {
+    padding: 0 40px 20px;
+    max-width: 420px;
+}
+
+/****** Inputs style Figma ******/
+
+.sw-input-label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.sw-input-underline {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 8px 0 6px;
+    font-size: 15px;
+    background: transparent;
+}
+
+.sw-input-underline:focus {
+    outline: none;
+    border-bottom: 1px solid #C50325;
+}
+
+.sw-input-underline::placeholder {
+    color: #888;
+}
+
+/****** Bouton rouge ******/
+
+.sw-btn-red {
+    margin-top: 20px;
+    width: 100%;
+    background: #C50325;
+    color: #fff;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 0.10em;
+    cursor: pointer;
+}
+
+.sw-btn-red:hover {
+    background: #A3021F;
+}
+
+/****** Textes ******/
+
+.sw-step1-note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 14px;
+}
+
+.sw-step1-terms {
+    font-size: 13px;
+    color: #666;
+    margin: 18px 0;
+}
+
+.sw-forgot {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #444;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sw-forgot:hover {
+    opacity: 0.7;
+}
+
+/****** Responsive ******/
+
+@media (max-width: 768px) {
+    .sw-step1-title-wrapper {
+        margin-left: 20px;
+        padding: 16px 24px;
+    }
+
+    .sw-step1-content {
+        padding: 0 20px 20px;
+    }
+}
+
+.sw-step1-tabs-header {
+    display:flex;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.sw-step1-tab {
+    background:none;
+    border:none;
+    font-size:16px;
+    letter-spacing:0.06em;
+    cursor:pointer;
+    padding:0;
+    color:#666;
+}
+
+.sw-step1-tab--active {
+    color:#000;
+    font-weight:600;
+}
+
+.sw-step1-panel {
+    display:none;
+}
+
+.sw-step1-panel--active {
+    display:block;
+}
+
