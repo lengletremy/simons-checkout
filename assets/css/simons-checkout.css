@@ -631,6 +631,11 @@
     padding: 18px 26px;
 }
 
+.sw-co-login-panels--connected {
+    background: #F7F7F7;
+    padding: 18px 26px;
+}
+
 .sw-co-login-panel {
     display: none;
     font-size: 14px;
