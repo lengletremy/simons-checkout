@@ -587,14 +587,22 @@
 .sw-co-required {
     font-size: 12px;
     color: #777;
+    margin: 0 0 12px;
+}
+
+.sw-co-required {
+    font-size: 12px;
+    color: #777;
     margin: 0 0 18px;
 }
 
 /******************************************************
  * Onglets "Commander sans inscription" / "Se connecter"
  ******************************************************/
+
 .sw-co-login-tabs {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-bottom: 20px;
 }
 
@@ -614,14 +622,20 @@
 }
 
 .sw-co-login-panels {
+    background: #FFFFFF;
+    padding: 28px 32px;
+}
+
+.sw-co-login-panels--connected {
     background: #F7F7F7;
-    padding: 24px 26px;
+    padding: 18px 26px;
 }
 
 .sw-co-login-panel {
     display: none;
     font-size: 14px;
     color: #555;
+    max-width: 360px;
 }
 .sw-co-login-panel--active {
     display: block;
@@ -650,7 +664,8 @@
 .sw-btn-validate-email {
     margin-top: 18px;
     display: block;
-    width: 180px;
+    width: 100%;
+    max-width: 280px;
     padding: 12px 0;
     background: #C50325;
     color: #fff;
@@ -726,6 +741,17 @@
     margin-right: 6px;
 }
 
+.sw-shipping-option {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sw-shipping-option input {
+    margin-right: 8px;
+}
+
 /******************************************************
  * Mode de livraison (bloc vide, style Figma)
  ******************************************************/
@@ -767,6 +793,18 @@
 .sw-checkout-product-meta {
     font-size: 13px;
     color: #555;
+}
+
+.sw-checkout-product-price {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.sw-co-payment-note {
+    font-size: 12px;
+    color: #777;
+    margin-top: 12px;
 }
 
 /* Responsive */
