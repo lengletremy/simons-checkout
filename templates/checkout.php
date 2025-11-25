@@ -50,7 +50,7 @@ $cart     = WC()->cart;
                                            type="email"
                                            name="billing_email"
                                            class="input-text sw-input-underline"
-                                           placeholder="exemple@simonswatches.com"
+                                           placeholder="Ex: exemple@tagheur.com"
                                            value="<?php echo esc_attr( $checkout->get_value( 'billing_email' ) ); ?>"
                                            required>
                                 </div>

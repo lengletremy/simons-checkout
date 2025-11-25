@@ -622,8 +622,13 @@
 }
 
 .sw-co-login-panels {
+    background: #FFFFFF;
+    padding: 28px 32px;
+}
+
+.sw-co-login-panels--connected {
     background: #F7F7F7;
-    padding: 24px 26px;
+    padding: 18px 26px;
 }
 
 .sw-co-login-panels--connected {
@@ -635,6 +640,7 @@
     display: none;
     font-size: 14px;
     color: #555;
+    max-width: 360px;
 }
 .sw-co-login-panel--active {
     display: block;
@@ -663,7 +669,8 @@
 .sw-btn-validate-email {
     margin-top: 18px;
     display: block;
-    width: 180px;
+    width: 100%;
+    max-width: 280px;
     padding: 12px 0;
     background: #C50325;
     color: #fff;
