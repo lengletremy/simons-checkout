@@ -587,14 +587,22 @@
 .sw-co-required {
     font-size: 12px;
     color: #777;
+    margin: 0 0 12px;
+}
+
+.sw-co-required {
+    font-size: 12px;
+    color: #777;
     margin: 0 0 18px;
 }
 
 /******************************************************
  * Onglets "Commander sans inscription" / "Se connecter"
  ******************************************************/
+
 .sw-co-login-tabs {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-bottom: 20px;
 }
 
@@ -614,14 +622,20 @@
 }
 
 .sw-co-login-panels {
+    background: #FFFFFF;
+    padding: 28px 32px;
+}
+
+.sw-co-login-panels--connected {
     background: #F7F7F7;
-    padding: 24px 26px;
+    padding: 18px 26px;
 }
 
 .sw-co-login-panel {
     display: none;
     font-size: 14px;
     color: #555;
+    max-width: 360px;
 }
 .sw-co-login-panel--active {
     display: block;
@@ -650,7 +664,8 @@
 .sw-btn-validate-email {
     margin-top: 18px;
     display: block;
-    width: 180px;
+    width: 100%;
+    max-width: 280px;
     padding: 12px 0;
     background: #C50325;
     color: #fff;
@@ -687,8 +702,33 @@
     background: #F7F7F7;
 }
 
+.sw-co-fields-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 18px 22px;
+    padding: 28px 32px 24px;
+}
+
+@media (max-width: 800px) {
+    .sw-co-fields-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 18px 18px;
+    }
+}
+
 .sw-co-fields-grid .form-row {
-    margin-bottom: 12px;
+    margin: 0;
+}
+
+.sw-co-fields-grid .form-row-first,
+.sw-co-fields-grid .form-row-last,
+.sw-co-fields-grid .form-row-first.validate-required,
+.sw-co-fields-grid .form-row-last.validate-required {
+    grid-column: auto;
+}
+
+.sw-co-fields-grid .form-row-wide {
+    grid-column: 1 / -1;
 }
 
 .sw-checkout-form .form-row label {
@@ -704,10 +744,27 @@
     width: 100%;
     border: 1px solid #E5E5E5;
     border-radius: 0;
-    padding: 10px 12px;
+    padding: 12px 14px 11px;
     font-size: 14px;
     background: #FFFFFF;
     box-shadow: none;
+}
+
+.sw-checkout-form .select2-selection,
+.sw-checkout-form .select2-selection__rendered,
+.sw-checkout-form .select2-selection__arrow {
+    height: 42px !important;
+    line-height: 42px !important;
+}
+
+.sw-checkout-form .select2-selection__rendered {
+    padding-left: 14px !important;
+    font-size: 14px;
+}
+
+.sw-checkout-form .select2-selection {
+    border-radius: 0 !important;
+    border: 1px solid #E5E5E5 !important;
 }
 
 .sw-checkout-form .input-text:focus,
@@ -718,12 +775,24 @@
 }
 
 .sw-co-checkbox {
-    margin-top: 12px;
+    margin-top: 14px;
+    padding: 0 32px 12px;
     font-size: 13px;
     color: #555;
 }
 .sw-co-checkbox input {
     margin-right: 6px;
+}
+
+.sw-shipping-option {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sw-shipping-option input {
+    margin-right: 8px;
 }
 
 /******************************************************
@@ -767,6 +836,18 @@
 .sw-checkout-product-meta {
     font-size: 13px;
     color: #555;
+}
+
+.sw-checkout-product-price {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.sw-co-payment-note {
+    font-size: 12px;
+    color: #777;
+    margin-top: 12px;
 }
 
 /* Responsive */
